@@ -11,9 +11,9 @@
 
 <style>
 
-/* =========================================================
-   PALETA DE CORES
-   ========================================================= */
+/* =====================================================
+   PALETA DE CORES — AVE-MARIA ATELIÊ
+   ===================================================== */
 
 :root {
     --tiffany: #81D8D0;
@@ -23,20 +23,20 @@
     --serenity-light: #C9D5EA;
 
     --white: #FFFFFF;
+    --white-soft: #F8FBFB;
 
     --gold: #C9A66B;
     --gold-light: #E8D7B5;
 
     --ink: #354052;
-    --ink-light: #667085;
+    --ink-light: #5B6575;
 
     --shadow: rgba(53,64,82,0.15);
 }
 
-
-/* =========================================================
+/* =====================================================
    CONFIGURAÇÕES GERAIS
-   ========================================================= */
+   ===================================================== */
 
 * {
     box-sizing: border-box;
@@ -48,19 +48,19 @@ html {
 
 body {
     margin: 0;
-    background: var(--white);
+    background: var(--white-soft);
     color: var(--ink);
     font-family: 'EB Garamond', serif;
     font-size: 18px;
     line-height: 1.6;
 }
 
-
-/* TÍTULOS */
+/* Títulos */
 
 h1,
 h2,
 h3,
+h4,
 .display {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
@@ -79,8 +79,7 @@ a {
     padding: 0 32px;
 }
 
-
-/* PEQUENOS TÍTULOS */
+/* Texto pequeno acima dos títulos */
 
 .eyebrow {
     font-family: 'EB Garamond', serif;
@@ -91,10 +90,9 @@ a {
     font-weight: 500;
 }
 
-
-/* =========================================================
-   TEXTURA SUAVE DO FUNDO
-   ========================================================= */
+/* =====================================================
+   FUNDO DECORATIVO
+   ===================================================== */
 
 body::before {
     content: "";
@@ -104,12 +102,12 @@ body::before {
     background-image:
         radial-gradient(
             circle at 20% 30%,
-            rgba(129,216,208,0.08),
+            rgba(129,216,208,0.10),
             transparent 40%
         ),
         radial-gradient(
             circle at 80% 70%,
-            rgba(146,168,209,0.08),
+            rgba(146,168,209,0.10),
             transparent 45%
         );
 
@@ -117,10 +115,9 @@ body::before {
     z-index: 0;
 }
 
-
-/* =========================================================
+/* =====================================================
    HEADER
-   ========================================================= */
+   ===================================================== */
 
 header {
     position: sticky;
@@ -129,11 +126,10 @@ header {
 
     background: rgba(255,255,255,0.94);
 
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
 
     border-bottom: 1px solid rgba(146,168,209,0.25);
 }
-
 
 .nav {
     display: flex;
@@ -146,7 +142,6 @@ header {
     margin: 0 auto;
 }
 
-
 /* LOGO */
 
 .logo {
@@ -155,7 +150,6 @@ header {
     gap: 10px;
 
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 24px;
     font-weight: 600;
 
@@ -165,7 +159,6 @@ header {
 .logo svg {
     flex-shrink: 0;
 }
-
 
 /* MENU */
 
@@ -197,10 +190,9 @@ nav ul a:hover {
     border-bottom-color: var(--gold);
 }
 
-
-/* =========================================================
+/* =====================================================
    BOTÕES
-   ========================================================= */
+   ===================================================== */
 
 .btn {
     display: inline-flex;
@@ -223,57 +215,49 @@ nav ul a:hover {
 
     transition:
         background .2s,
-        color .2s,
-        border-color .2s;
+        transform .2s,
+        box-shadow .2s;
 }
 
 .btn:hover {
     background: var(--serenity);
     border-color: var(--serenity);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px var(--shadow);
 }
-
-
-/* BOTÃO TRANSPARENTE */
 
 .btn.ghost {
     background: transparent;
 
     color: var(--serenity) !important;
 
-    border: 1px solid var(--serenity);
+    border: 1px solid var(--gold);
 }
 
 .btn.ghost:hover {
-    background: var(--serenity-light);
+    background: var(--gold-light);
 
     color: var(--ink) !important;
-
-    border-color: var(--serenity-light);
 }
-
-
-/* MENU MOBILE */
 
 .menu-toggle {
     display: none;
-
     background: none;
     border: none;
-
     cursor: pointer;
 }
 
-
-/* =========================================================
+/* =====================================================
    HERO
-   ========================================================= */
+   ===================================================== */
 
 .hero {
     position: relative;
     z-index: 1;
 
     display: grid;
-
     grid-template-columns: 1.1fr 0.9fr;
 
     gap: 40px;
@@ -283,28 +267,26 @@ nav ul a:hover {
     padding: 88px 32px 60px;
 
     max-width: 1120px;
-
     margin: 0 auto;
 }
 
-
 .hero h1 {
-    font-size: clamp(40px,5vw,64px);
+    font-size: clamp(40px, 5vw, 64px);
 
     line-height: 1.08;
 
     font-style: italic;
 
     font-weight: 500;
-}
 
+    color: var(--serenity);
+}
 
 .hero h1 em {
     font-style: normal;
 
     color: var(--tiffany-deep);
 }
-
 
 .hero p.lead {
     margin-top: 20px;
@@ -316,7 +298,6 @@ nav ul a:hover {
     color: var(--ink-light);
 }
 
-
 .hero-cta {
     display: flex;
 
@@ -327,17 +308,15 @@ nav ul a:hover {
     flex-wrap: wrap;
 }
 
-
 .hero-art {
     display: flex;
 
     justify-content: center;
 }
 
-
-/* =========================================================
-   DIVISOR DECORATIVO
-   ========================================================= */
+/* =====================================================
+   DIVISOR DE CONTAS
+   ===================================================== */
 
 .bead-divider {
     display: flex;
@@ -359,10 +338,9 @@ nav ul a:hover {
     display: block;
 }
 
-
-/* =========================================================
+/* =====================================================
    SEÇÕES
-   ========================================================= */
+   ===================================================== */
 
 section {
     position: relative;
@@ -372,7 +350,6 @@ section {
     padding: 70px 0;
 }
 
-
 .section-head {
     max-width: 640px;
 
@@ -381,13 +358,13 @@ section {
     text-align: center;
 }
 
-
 .section-head h2 {
-    font-size: clamp(30px,3.6vw,42px);
+    font-size: clamp(30px, 3.6vw, 42px);
 
     margin-top: 8px;
-}
 
+    color: var(--serenity);
+}
 
 .section-head p {
     color: var(--ink-light);
@@ -397,10 +374,9 @@ section {
     margin-top: 12px;
 }
 
-
-/* =========================================================
-   LOJA / PRODUTOS
-   ========================================================= */
+/* =====================================================
+   LOJA — GRID
+   ===================================================== */
 
 .shop-grid {
     display: grid;
@@ -408,19 +384,20 @@ section {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(240px,1fr)
+            minmax(240px, 1fr)
         );
 
     gap: 24px;
 }
 
+/* CARD */
 
 .card {
     background: var(--white);
 
-    border: 1px solid rgba(146,168,209,0.45);
+    border: 1px solid rgba(146,168,209,0.35);
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     overflow: hidden;
 
@@ -429,13 +406,12 @@ section {
     flex-direction: column;
 
     box-shadow:
-        0 1px 0 rgba(129,216,208,0.25);
+        0 2px 8px rgba(53,64,82,0.05);
 
     transition:
         transform .25s ease,
         box-shadow .25s ease;
 }
-
 
 .card:hover {
     transform: translateY(-4px);
@@ -444,22 +420,25 @@ section {
         0 14px 30px var(--shadow);
 }
 
+/* FOTO */
 
 .card .photo {
     width: 100%;
 
-    aspect-ratio: 4/5;
+    aspect-ratio: 4 / 5;
 
     object-fit: cover;
 
     display: block;
 
     border-bottom:
-        1px solid rgba(146,168,209,0.35);
+        1px solid rgba(146,168,209,0.30);
 
-    background: var(--serenity-light);
+    background:
+        var(--serenity-light);
 }
 
+/* CORPO DO CARD */
 
 .card .body {
     padding: 20px 22px 26px;
@@ -473,7 +452,6 @@ section {
     flex-grow: 1;
 }
 
-
 .card h3 {
     font-size: 21px;
 
@@ -484,7 +462,6 @@ section {
     line-height: 1.2;
 }
 
-
 .card p.desc {
     font-size: 14.5px;
 
@@ -492,7 +469,6 @@ section {
 
     flex-grow: 1;
 }
-
 
 .card .price {
     font-family: 'Cormorant Garamond', serif;
@@ -503,7 +479,6 @@ section {
 
     font-weight: 600;
 }
-
 
 .card .buy {
     align-self: flex-start;
@@ -520,21 +495,19 @@ section {
     padding-bottom: 2px;
 }
 
-
 .card .buy:hover {
     color: var(--tiffany-deep);
 }
-
 
 .cat-block {
     margin-bottom: 52px;
 }
 
-
 .cat-block:last-child {
     margin-bottom: 0;
 }
 
+/* TÍTULO DAS CATEGORIAS */
 
 .cat-title {
     display: flex;
@@ -545,7 +518,6 @@ section {
 
     margin-bottom: 24px;
 }
-
 
 .cat-title h3 {
     font-family: 'Cormorant Garamond', serif;
@@ -559,25 +531,27 @@ section {
     white-space: nowrap;
 }
 
-
 .cat-title .line {
     height: 1px;
 
     background:
-        rgba(146,168,209,0.6);
+        rgba(201,166,107,0.55);
 
     flex-grow: 1;
 }
 
-
-/* =========================================================
+/* =====================================================
    BLOG
-   ========================================================= */
+   ===================================================== */
 
 #blog {
-    background: var(--serenity-light);
+    background:
+        linear-gradient(
+            180deg,
+            var(--white-soft),
+            #F2F7FA
+        );
 }
-
 
 .blog-feature {
     display: grid;
@@ -591,15 +565,17 @@ section {
     background: var(--white);
 
     border:
-        1px solid rgba(146,168,209,0.45);
+        1px solid rgba(146,168,209,0.35);
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     padding: 44px;
 
     margin-bottom: 28px;
-}
 
+    box-shadow:
+        0 4px 16px rgba(53,64,82,0.05);
+}
 
 .blog-feature .tag {
     display: inline-block;
@@ -622,13 +598,13 @@ section {
     margin-bottom: 14px;
 }
 
-
 .blog-feature h3 {
     font-size: 32px;
 
     line-height: 1.2;
-}
 
+    color: var(--serenity);
+}
 
 .dropcap::first-letter {
     font-family: 'Cormorant Garamond', serif;
@@ -646,19 +622,17 @@ section {
     font-weight: 600;
 }
 
-
 .blog-list {
     display: grid;
 
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(280px,1fr)
+            minmax(280px, 1fr)
         );
 
     gap: 24px;
 }
-
 
 .blog-card {
     border-top:
@@ -666,7 +640,6 @@ section {
 
     padding-top: 16px;
 }
-
 
 .blog-card .tag {
     font-size: 12px;
@@ -678,7 +651,6 @@ section {
     color: var(--tiffany-deep);
 }
 
-
 .blog-card h4 {
     font-size: 22px;
 
@@ -689,7 +661,6 @@ section {
     font-weight: 600;
 }
 
-
 .blog-card p {
     font-size: 15.5px;
 
@@ -698,8 +669,8 @@ section {
     margin-top: 8px;
 }
 
-
-.blog-card a.read {
+.blog-card a.read,
+.blog-feature a.read {
     font-size: 14.5px;
 
     color: var(--serenity);
@@ -708,17 +679,20 @@ section {
         1px solid var(--gold);
 }
 
-
-/* =========================================================
+/* =====================================================
    DEPOIMENTOS
-   ========================================================= */
+   ===================================================== */
 
 .testimonials {
-    background: var(--serenity);
+    background:
+        linear-gradient(
+            135deg,
+            var(--serenity),
+            var(--tiffany-deep)
+        );
 
     color: var(--white);
 }
-
 
 .testimonials .wrap {
     padding-top: 0;
@@ -726,19 +700,17 @@ section {
     padding-bottom: 0;
 }
 
-
 .t-grid {
     display: grid;
 
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(260px,1fr)
+            minmax(260px, 1fr)
         );
 
     gap: 32px;
 }
-
 
 .t-card blockquote {
     font-family: 'Cormorant Garamond', serif;
@@ -750,8 +722,9 @@ section {
     line-height: 1.4;
 
     margin: 0 0 16px;
-}
 
+    color: var(--white);
+}
 
 .t-card cite {
     font-size: 14px;
@@ -763,15 +736,15 @@ section {
     font-style: normal;
 }
 
-
-/* =========================================================
-   CONTATO / NEWSLETTER
-   ========================================================= */
+/* =====================================================
+   NEWSLETTER / CONTATO
+   ===================================================== */
 
 .contact {
     text-align: center;
-}
 
+    background: var(--white-soft);
+}
 
 .contact form {
     display: flex;
@@ -784,7 +757,6 @@ section {
 
     margin-top: 28px;
 }
-
 
 .contact input[type=email] {
     padding: 13px 16px;
@@ -803,19 +775,17 @@ section {
     min-width: 260px;
 
     color: var(--ink);
-}
 
+    outline: none;
+}
 
 .contact input[type=email]:focus {
-    outline: none;
-
-    border-color:
-        var(--tiffany-deep);
+    border-color: var(--tiffany-deep);
 
     box-shadow:
-        0 0 0 3px rgba(129,216,208,0.18);
+        0 0 0 3px
+        rgba(129,216,208,0.20);
 }
-
 
 .contact .social {
     display: flex;
@@ -829,27 +799,24 @@ section {
     font-size: 15px;
 }
 
-
 .contact .social a {
-    color: var(--serenity);
-
     border-bottom:
         1px solid var(--gold);
-}
 
+    color: var(--serenity);
+}
 
 .contact .social a:hover {
     color: var(--tiffany-deep);
 }
 
-
-/* =========================================================
+/* =====================================================
    RODAPÉ
-   ========================================================= */
+   ===================================================== */
 
 footer {
     border-top:
-        1px solid rgba(146,168,209,0.3);
+        1px solid rgba(146,168,209,0.25);
 
     padding: 36px 32px;
 
@@ -859,16 +826,14 @@ footer {
 
     color: var(--ink-light);
 
-    background:
-        rgba(201,213,234,0.25);
+    background: var(--white);
 }
 
+/* =====================================================
+   RESPONSIVIDADE — CELULAR
+   ===================================================== */
 
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
-
-@media (max-width:800px) {
+@media (max-width: 800px) {
 
     .hero {
         grid-template-columns: 1fr;
@@ -876,16 +841,13 @@ footer {
         padding-top: 56px;
     }
 
-
     .hero-art {
         order: -1;
     }
 
-
     nav ul {
         display: none;
     }
-
 
     .blog-feature {
         grid-template-columns: 1fr;
@@ -893,18 +855,53 @@ footer {
         padding: 28px;
     }
 
-}
+    .nav {
+        padding:
+            16px 20px;
+    }
 
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cat-title h3 {
+        font-size: 23px;
+    }
+
+    .contact form {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .contact input[type=email] {
+        width: 100%;
+
+        max-width: 360px;
+    }
+
+    .contact .social {
+        flex-wrap: wrap;
+    }
+}
 
 </style>
 </head>
 
-
 <body>
 
-
 <!-- =====================================================
-     HEADER
+     CABEÇALHO
      ===================================================== -->
 
 <header>
@@ -948,11 +945,15 @@ footer {
                 </li>
 
                 <li>
-                    <a href="#depoimentos">Depoimentos</a>
+                    <a href="#depoimentos">
+                        Depoimentos
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#contato">Contato</a>
+                    <a href="#contato">
+                        Contato
+                    </a>
                 </li>
 
             </ul>
@@ -966,7 +967,9 @@ footer {
             target="_blank"
             rel="noopener"
         >
+
             Fazer pedido
+
         </a>
 
     </div>
@@ -986,7 +989,6 @@ footer {
             Feito à mão · Abençoado na paróquia local
         </p>
 
-
         <h1>
             Fé que se carrega
             <em>no bolso</em>,
@@ -994,14 +996,12 @@ footer {
             na parede e no coração.
         </h1>
 
-
         <p class="lead">
 
             Terços, imagens e medalhas escolhidos com o mesmo cuidado de quem os reza.
             Cada peça sai do ateliê pronta para acompanhar uma história de devoção.
 
         </p>
-
 
         <div class="hero-cta">
 
@@ -1011,7 +1011,6 @@ footer {
             >
                 Ver a loja
             </a>
-
 
             <a
                 class="btn ghost"
@@ -1057,12 +1056,29 @@ footer {
                 <circle cx="72" cy="66" r="9" fill="#FFFFFF"/>
                 <circle cx="98" cy="42" r="9" fill="#FFFFFF"/>
 
-
                 <path
-                    d="M130 39 Q148 34 162 51 Q178 58 188 75 Q198 82 204 107 Q208 116 210 143 Q208 152 204 161 Q200 176 188 193 Q180 202 162 217 Q150 226 130 229 Q110 226 98 217 Q80 202 72 193 Q60 176 56 161 Q52 152 50 143 Q52 116 56 107 Q62 82 72 75 Q82 58 98 51 Q112 34 130 39 Z"
+                    d="
+                    M130 39
+                    Q148 34 162 51
+                    Q178 58 188 75
+                    Q198 82 204 107
+                    Q208 116 210 143
+                    Q208 152 204 161
+                    Q200 176 188 193
+                    Q180 202 162 217
+                    Q150 226 130 229
+                    Q110 226 98 217
+                    Q80 202 72 193
+                    Q60 176 56 161
+                    Q52 152 50 143
+                    Q52 116 56 107
+                    Q62 82 72 75
+                    Q82 58 98 51
+                    Q112 34 130 39
+                    Z
+                    "
                     fill="none"
                 />
-
 
                 <line
                     x1="130"
@@ -1072,14 +1088,12 @@ footer {
                     stroke-width="1.6"
                 />
 
-
                 <circle
                     cx="130"
                     cy="252"
                     r="6"
                     fill="#FFFFFF"
                 />
-
 
                 <circle
                     cx="130"
@@ -1156,20 +1170,19 @@ footer {
 
 <div class="wrap">
 
-
 <div class="section-head">
 
-    <p class="eyebrow">
-        A loja
-    </p>
+<p class="eyebrow">
+A loja
+</p>
 
-    <h2>
-        Peças para rezar e presentear
-    </h2>
+<h2>
+Peças para rezar e presentear
+</h2>
 
-    <p>
-        Uma seleção enxuta, renovada por estação litúrgica.
-    </p>
+<p>
+Uma seleção enxuta, renovada por estação litúrgica.
+</p>
 
 </div>
 
@@ -1180,11 +1193,11 @@ footer {
 
 <div class="cat-title">
 
-    <h3>
-        Imagens sacras
-    </h3>
+<h3>
+Imagens sacras
+</h3>
 
-    <div class="line"></div>
+<div class="line"></div>
 
 </div>
 
@@ -1192,35 +1205,35 @@ footer {
 <div class="shop-grid">
 
 
-<!-- NOSSA SENHORA DAS GRAÇAS -->
+<!-- PRODUTO 1 -->
 
 <div class="card">
 
 <img
-    class="photo"
-    src="images/ns-das-gracas.jpeg"
-    alt="Nossa Senhora das Graças"
+class="photo"
+src="images/ns-das-gracas.jpeg"
+alt="Nossa Senhora das Graças"
 >
 
 <div class="body">
 
 <h3>
-    Nossa Senhora das Graças
+Nossa Senhora das Graças
 </h3>
 
 <p class="desc">
-    Resina, 40 cm.
+Resina, 40 cm.
 </p>
 
 <p class="price">
-    R$ 399,90
+R$ 399,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Nossa%20Senhora%20das%20Gra%C3%A7as%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Nossa%20Senhora%20das%20Gra%C3%A7as%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1228,35 +1241,35 @@ footer {
 </div>
 
 
-<!-- SAGRADA FAMÍLIA -->
+<!-- PRODUTO 2 -->
 
 <div class="card">
 
 <img
-    class="photo"
-    src="images/sagrada-familia.jpeg"
-    alt="Sagrada Família"
+class="photo"
+src="images/sagrada-familia.jpeg"
+alt="Sagrada Família"
 >
 
 <div class="body">
 
 <h3>
-    Sagrada Família
+Sagrada Família
 </h3>
 
 <p class="desc">
-    7,6 cm.
+7,6 cm.
 </p>
 
 <p class="price">
-    R$ 44,90
+R$ 44,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Sagrada%20Fam%C3%ADlia%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Sagrada%20Fam%C3%ADlia%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1264,35 +1277,35 @@ footer {
 </div>
 
 
-<!-- SÃO RAFAEL E SÃO GABRIEL -->
+<!-- PRODUTO 3 -->
 
 <div class="card">
 
 <img
-    class="photo"
-    src="images/arcanjos.jpeg"
-    alt="São Rafael e São Gabriel Arcanjo"
+class="photo"
+src="images/arcanjos.jpeg"
+alt="São Rafael e São Gabriel Arcanjo"
 >
 
 <div class="body">
 
 <h3>
-    São Rafael e São Gabriel
+São Rafael e São Gabriel
 </h3>
 
 <p class="desc">
-    Resina, 7,6 cm — vendidos separadamente.
+Resina, 7,6 cm — vendidos separadamente.
 </p>
 
 <p class="price">
-    R$ 20,90 cada
+R$ 20,90 cada
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20S%C3%A3o%20Rafael%20e%20S%C3%A3o%20Gabriel%20Arcanjo%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20S%C3%A3o%20Rafael%20e%20S%C3%A3o%20Gabriel%20Arcanjo%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1300,35 +1313,35 @@ footer {
 </div>
 
 
-<!-- NOSSA SENHORA GRÁVIDA -->
+<!-- PRODUTO 4 -->
 
 <div class="card">
 
 <img
-    class="photo"
-    src="images/ns-gravida.jpeg"
-    alt="Nossa Senhora Grávida"
+class="photo"
+src="images/ns-gravida.jpeg"
+alt="Nossa Senhora Grávida"
 >
 
 <div class="body">
 
 <h3>
-    Nossa Senhora Grávida
+Nossa Senhora Grávida
 </h3>
 
 <p class="desc">
-    Resina.
+Resina.
 </p>
 
 <p class="price">
-    Sob consulta
+Sob consulta
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Nossa%20Senhora%20Gr%C3%A1vida%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Nossa%20Senhora%20Gr%C3%A1vida%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1336,35 +1349,35 @@ footer {
 </div>
 
 
-<!-- NOSSA SENHORA APARECIDA -->
+<!-- PRODUTO 5 -->
 
 <div class="card">
 
 <img
-    class="photo"
-    src="images/ns-aparecida.jpeg"
-    alt="Nossa Senhora Aparecida"
+class="photo"
+src="images/ns-aparecida.jpeg"
+alt="Nossa Senhora Aparecida"
 >
 
 <div class="body">
 
 <h3>
-    Nossa Senhora Aparecida
+Nossa Senhora Aparecida
 </h3>
 
 <p class="desc">
-    Resina, 13 cm.
+Resina, 13 cm.
 </p>
 
 <p class="price">
-    R$ 72,90
+R$ 72,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Nossa%20Senhora%20Aparecida%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Nossa%20Senhora%20Aparecida%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1372,35 +1385,35 @@ footer {
 </div>
 
 
-<!-- SANTA RITA -->
+<!-- PRODUTO 6 -->
 
 <div class="card">
 
 <img
-    class="photo"
-    src="images/santa-rita.jpeg"
-    alt="Santa Rita de Cássia"
+class="photo"
+src="images/santa-rita.jpeg"
+alt="Santa Rita de Cássia"
 >
 
 <div class="body">
 
 <h3>
-    Santa Rita de Cássia
+Santa Rita de Cássia
 </h3>
 
 <p class="desc">
-    Resina, 8 cm.
+Resina, 8 cm.
 </p>
 
 <p class="price">
-    R$ 39,90
+R$ 39,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Santa%20Rita%20de%20C%C3%A1ssia%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Santa%20Rita%20de%20C%C3%A1ssia%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1408,43 +1421,43 @@ footer {
 </div>
 
 
-<!-- PADRE PIO E SANTO ANTÔNIO -->
+<!-- PRODUTO 7 -->
 
 <div class="card">
 
 <img
-    class="photo"
-    src="images/padre-pio-santo-antonio.jpeg"
-    alt="Padre Pio e Santo Antônio"
+class="photo"
+src="images/padre-pio-santo-antonio.jpeg"
+alt="Padre Pio e Santo Antônio"
 >
 
 <div class="body">
 
 <h3>
-    Padre Pio e Santo Antônio
+Padre Pio e Santo Antônio
 </h3>
 
 <p class="desc">
-    Resina, 13 cm — vendidos separadamente.
+Resina, 13 cm — vendidos separadamente.
 </p>
 
 <p class="price">
-    R$ 69,90 / R$ 35,90
+R$ 69,90 / R$ 35,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Padre%20Pio%20e%20Santo%20Ant%C3%B4nio%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Padre%20Pio%20e%20Santo%20Ant%C3%B4nio%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
 
 </div>
 
-
 </div>
+
 </div>
 
 
@@ -1455,7 +1468,7 @@ footer {
 <div class="cat-title">
 
 <h3>
-    Luminárias
+Luminárias
 </h3>
 
 <div class="line"></div>
@@ -1469,30 +1482,30 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/luminaria-anjo.jpeg"
-    alt="Luminária Anjo"
+class="photo"
+src="images/luminaria-anjo.jpeg"
+alt="Luminária Anjo"
 >
 
 <div class="body">
 
 <h3>
-    Luminária Anjo
+Luminária Anjo
 </h3>
 
 <p class="desc">
-    Luz suave para o quarto ou oratório.
+Luz suave para o quarto ou oratório.
 </p>
 
 <p class="price">
-    R$ 13,90
+R$ 13,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Lumin%C3%A1ria%20Anjo%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Lumin%C3%A1ria%20Anjo%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1503,38 +1516,38 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/luminaria-aparecida.jpeg"
-    alt="Luminária Nossa Senhora Aparecida"
+class="photo"
+src="images/luminaria-aparecida.jpeg"
+alt="Luminária Nossa Senhora Aparecida"
 >
 
 <div class="body">
 
 <h3>
-    Luminária N. Sra. Aparecida
+Luminária N. Sra. Aparecida
 </h3>
 
 <p class="desc">
-    Borracha, 20 cm, muda de cor.
+Borracha, 20 cm, muda de cor.
 </p>
 
 <p class="price">
-    R$ 119,90
+R$ 119,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Lumin%C3%A1ria%20de%20Borracha%20Nossa%20Senhora%20Aparecida%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Lumin%C3%A1ria%20de%20Borracha%20Nossa%20Senhora%20Aparecida%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
 
 </div>
 
-
 </div>
+
 </div>
 
 
@@ -1545,7 +1558,7 @@ footer {
 <div class="cat-title">
 
 <h3>
-    Terços
+Terços
 </h3>
 
 <div class="line"></div>
@@ -1559,26 +1572,26 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/terco-cristal.jpeg"
-    alt="Terço de Cristal"
+class="photo"
+src="images/terco-cristal.jpeg"
+alt="Terço de Cristal"
 >
 
 <div class="body">
 
 <h3>
-    Terço de Cristal
+Terço de Cristal
 </h3>
 
 <p class="price">
-    R$ 16,90
+R$ 16,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20de%20Cristal%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20de%20Cristal%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1589,30 +1602,30 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/terco-azul.jpeg"
-    alt="Terço Azul Luxuoso Devocional"
+class="photo"
+src="images/terco-azul.jpeg"
+alt="Terço Azul Luxuoso Devocional"
 >
 
 <div class="body">
 
 <h3>
-    Terço Azul Luxuoso
+Terço Azul Luxuoso
 </h3>
 
 <p class="desc">
-    Devocional — frete grátis.
+Devocional — frete grátis.
 </p>
 
 <p class="price">
-    R$ 49,90
+R$ 49,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20Azul%20Luxuoso%20Devocional%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20Azul%20Luxuoso%20Devocional%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1623,26 +1636,26 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/terco-hematita.jpeg"
-    alt="Terço Hematita São Bento"
+class="photo"
+src="images/terco-hematita.jpeg"
+alt="Terço Hematita São Bento"
 >
 
 <div class="body">
 
 <h3>
-    Terço Hematita São Bento
+Terço Hematita São Bento
 </h3>
 
 <p class="price">
-    R$ 20,90
+R$ 20,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20Hematita%20S%C3%A3o%20Bento%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20Hematita%20S%C3%A3o%20Bento%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1653,30 +1666,30 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/terco-rosa.jpeg"
-    alt="Terço Rosa"
+class="photo"
+src="images/terco-rosa.jpeg"
+alt="Terço Rosa"
 >
 
 <div class="body">
 
 <h3>
-    Terço Rosa
+Terço Rosa
 </h3>
 
 <p class="desc">
-    Riqueza de detalhes e devoção.
+Riqueza de detalhes e devoção.
 </p>
 
 <p class="price">
-    R$ 20,90
+R$ 20,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20Rosa%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20Rosa%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1687,26 +1700,26 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/terco-perola.jpeg"
-    alt="Terço Pérola"
+class="photo"
+src="images/terco-perola.jpeg"
+alt="Terço Pérola"
 >
 
 <div class="body">
 
 <h3>
-    Terço Pérola
+Terço Pérola
 </h3>
 
 <p class="price">
-    R$ 34,90
+R$ 34,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20P%C3%A9rola%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20P%C3%A9rola%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1717,34 +1730,34 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/terco-madeira.jpeg"
-    alt="Terço de Madeira São Bento"
+class="photo"
+src="images/terco-madeira.jpeg"
+alt="Terço de Madeira São Bento"
 >
 
 <div class="body">
 
 <h3>
-    Terço de Madeira São Bento
+Terço de Madeira São Bento
 </h3>
 
 <p class="price">
-    R$ 20,90
+R$ 20,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20de%20Madeira%20S%C3%A3o%20Bento%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Ter%C3%A7o%20de%20Madeira%20S%C3%A3o%20Bento%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
 
 </div>
 
-
 </div>
+
 </div>
 
 
@@ -1755,7 +1768,7 @@ footer {
 <div class="cat-title">
 
 <h3>
-    Acessórios
+Acessórios
 </h3>
 
 <div class="line"></div>
@@ -1769,26 +1782,26 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/adesivo-carro.jpeg"
-    alt="Adesivo para carro"
+class="photo"
+src="images/adesivo-carro.jpeg"
+alt="Adesivo para carro"
 >
 
 <div class="body">
 
 <h3>
-    Adesivo para Carro
+Adesivo para Carro
 </h3>
 
 <p class="price">
-    R$ 6,90
+R$ 6,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Adesivo%20para%20Carro%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Adesivo%20para%20Carro%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1799,26 +1812,26 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/chaveiro-guadalupe.jpeg"
-    alt="Chaveiro Nossa Senhora de Guadalupe"
+class="photo"
+src="images/chaveiro-guadalupe.jpeg"
+alt="Chaveiro Nossa Senhora de Guadalupe"
 >
 
 <div class="body">
 
 <h3>
-    Chaveiro N. Sra. de Guadalupe
+Chaveiro N. Sra. de Guadalupe
 </h3>
 
 <p class="price">
-    R$ 15,99
+R$ 15,99
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Chaveiro%20Nossa%20Senhora%20de%20Guadalupe%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Chaveiro%20Nossa%20Senhora%20de%20Guadalupe%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1829,26 +1842,26 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/chaveiro-espirito-santo.jpeg"
-    alt="Chaveiro Divino Espírito Santo"
+class="photo"
+src="images/chaveiro-espirito-santo.jpeg"
+alt="Chaveiro Divino Espírito Santo"
 >
 
 <div class="body">
 
 <h3>
-    Chaveiro Divino Espírito Santo
+Chaveiro Divino Espírito Santo
 </h3>
 
 <p class="price">
-    R$ 21,90
+R$ 21,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Chaveiro%20Divino%20Esp%C3%ADrito%20Santo%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Chaveiro%20Divino%20Esp%C3%ADrito%20Santo%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
@@ -1859,36 +1872,35 @@ footer {
 <div class="card">
 
 <img
-    class="photo"
-    src="images/ima-geladeira.jpeg"
-    alt="Ímã de geladeira Nossa Senhora Aparecida"
+class="photo"
+src="images/ima-geladeira.jpeg"
+alt="Ímã de geladeira Nossa Senhora Aparecida"
 >
 
 <div class="body">
 
 <h3>
-    Ímã de Geladeira Aparecida
+Ímã de Geladeira Aparecida
 </h3>
 
 <p class="price">
-    R$ 10,90
+R$ 10,90
 </p>
 
 <a
-    class="buy"
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20%C3%8Dm%C3%A3%20de%20Geladeira%20Nossa%20Senhora%20Aparecida%20do%20Ave-Maria%20Ateli%C3%AA."
+class="buy"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20%C3%8Dm%C3%A3%20de%20Geladeira%20Nossa%20Senhora%20Aparecida%20do%20Ave-Maria%20Ateli%C3%AA."
 >
-    Pedir pelo WhatsApp →
+Pedir pelo WhatsApp →
 </a>
 
 </div>
 
 </div>
 
-
-</div>
 </div>
 
+</div>
 
 </div>
 
@@ -1902,16 +1914,16 @@ footer {
 <div class="bead-divider">
 
 <svg
-    width="100%"
-    height="20"
-    viewBox="0 0 1000 20"
-    preserveAspectRatio="xMidYMid meet"
+width="100%"
+height="20"
+viewBox="0 0 1000 20"
+preserveAspectRatio="xMidYMid meet"
 >
 
 <g
-    fill="none"
-    stroke="#C9A66B"
-    stroke-width="1.2"
+fill="none"
+stroke="#C9A66B"
+stroke-width="1.2"
 >
 
 <circle cx="10" cy="10" r="3.5"/>
@@ -1923,12 +1935,12 @@ footer {
 <circle cx="990" cy="10" r="3.5"/>
 
 <line
-    x1="80"
-    y1="10"
-    x2="920"
-    y2="10"
-    stroke-dasharray="1,14"
-    stroke-linecap="round"
+x1="80"
+y1="10"
+x2="920"
+y2="10"
+stroke-dasharray="1,14"
+stroke-linecap="round"
 />
 
 </g>
@@ -1946,19 +1958,18 @@ footer {
 
 <div class="wrap">
 
-
 <div class="section-head">
 
 <p class="eyebrow">
-    O blog
+O blog
 </p>
 
 <h2>
-    Histórias e cuidados para quem vive a fé
+Histórias e cuidados para quem vive a fé
 </h2>
 
 <p>
-    Conteúdo pensado para ajudar você a escolher, cuidar e entender cada peça.
+Conteúdo pensado para ajudar você a escolher, cuidar e entender cada peça.
 </p>
 
 </div>
@@ -1966,18 +1977,15 @@ footer {
 
 <div class="blog-feature">
 
-
 <div>
 
 <span class="tag">
-    Guia de compra
+Guia de compra
 </span>
 
-
 <h3>
-    Como escolher o terço certo para você
+Como escolher o terço certo para você
 </h3>
-
 
 <p class="dropcap">
 
@@ -1985,51 +1993,50 @@ Nem todo terço serve para toda ocasião.
 Um terço de bolso, discreto e leve, acompanha o dia a dia;
 já um terço de parede pede madeira maciça e conta grande,
 feita para ser vista e tocada em família.
+
 Neste guia, explicamos os materiais mais comuns —
 oliveira, madrepérola, prata —
 e como cada um envelhece com o uso.
 
 </p>
 
-
 <a
-    class="read"
-    href="#contato"
+class="read"
+href="#contato"
 >
-    Continuar lendo →
+Continuar lendo →
 </a>
 
 </div>
 
 
 <svg
-    width="100%"
-    height="220"
-    viewBox="0 0 300 220"
+width="100%"
+height="220"
+viewBox="0 0 300 220"
 >
 
 <g
-    fill="none"
-    stroke="#5CBDB5"
-    stroke-width="1.2"
+fill="none"
+stroke="#5CBDB5"
+stroke-width="1.2"
 >
 
 <rect
-    x="20"
-    y="20"
-    width="260"
-    height="180"
-    rx="2"
+x="20"
+y="20"
+width="260"
+height="180"
+rx="2"
 />
 
 <path
-    d="M150 40v140M90 60c30 20 30 60 0 120M210 60c-30 20-30 60 0 120"
+d="M150 40v140M90 60c30 20 30 60 0 120M210 60c-30 20-30 60 0 120"
 />
 
 </g>
 
 </svg>
-
 
 </div>
 
@@ -2040,23 +2047,23 @@ e como cada um envelhece com o uso.
 <div class="blog-card">
 
 <span class="tag">
-    História
+História
 </span>
 
 <h4>
-    A origem do terço e a devoção mariana
+A origem do terço e a devoção mariana
 </h4>
 
 <p>
-    De onde vem essa oração repetida em contas —
-    e por que ela atravessou oito séculos sem perder força.
+De onde vem essa oração repetida em contas —
+e por que ela atravessou oito séculos sem perder força.
 </p>
 
 <a
-    class="read"
-    href="#contato"
+class="read"
+href="#contato"
 >
-    Ler artigo →
+Ler artigo →
 </a>
 
 </div>
@@ -2065,23 +2072,23 @@ e como cada um envelhece com o uso.
 <div class="blog-card">
 
 <span class="tag">
-    Cuidados
+Cuidados
 </span>
 
 <h4>
-    Como conservar imagens sacras em casa
+Como conservar imagens sacras em casa
 </h4>
 
 <p>
-    Luz, poeira e umidade são os maiores inimigos da pintura.
-    Veja como limpar sem danificar.
+Luz, poeira e umidade são os maiores inimigos da pintura.
+Veja como limpar sem danificar.
 </p>
 
 <a
-    class="read"
-    href="#contato"
+class="read"
+href="#contato"
 >
-    Ler artigo →
+Ler artigo →
 </a>
 
 </div>
@@ -2090,23 +2097,23 @@ e como cada um envelhece com o uso.
 <div class="blog-card">
 
 <span class="tag">
-    Presentes
+Presentes
 </span>
 
 <h4>
-    O que dar de presente numa primeira comunhão
+O que dar de presente numa primeira comunhão
 </h4>
 
 <p>
-    Três ideias que unem significado e durabilidade,
-    para marcar a data sem cair no óbvio.
+Três ideias que unem significado e durabilidade,
+para marcar a data sem cair no óbvio.
 </p>
 
 <a
-    class="read"
-    href="#contato"
+class="read"
+href="#contato"
 >
-    Ler artigo →
+Ler artigo →
 </a>
 
 </div>
@@ -2124,8 +2131,8 @@ e como cada um envelhece com o uso.
      ===================================================== -->
 
 <section
-    id="depoimentos"
-    class="testimonials"
+id="depoimentos"
+class="testimonials"
 >
 
 <div class="wrap">
@@ -2134,17 +2141,16 @@ e como cada um envelhece com o uso.
 <div class="section-head">
 
 <p
-    class="eyebrow"
-    style="color:var(--gold-light);"
+class="eyebrow"
+style="color:var(--gold-light);"
 >
-    Depoimentos
+Depoimentos
 </p>
 
-
 <h2
-    style="color:var(--white);"
+style="color:var(--white);"
 >
-    Quem já recebeu uma peça
+Quem já recebeu uma peça
 </h2>
 
 </div>
@@ -2157,14 +2163,12 @@ e como cada um envelhece com o uso.
 
 <blockquote>
 
-"O terço chegou embrulhado com tanto cuidado
-que virou presente de batizado sem eu nem precisar
-embrulhar de novo."
+"O terço chegou embrulhado com tanto cuidado que virou presente de batizado sem eu nem precisar embrulhar de novo."
 
 </blockquote>
 
 <cite>
-    — Cliente, São Paulo
+— Cliente, São Paulo
 </cite>
 
 </div>
@@ -2174,13 +2178,12 @@ embrulhar de novo."
 
 <blockquote>
 
-"A imagem de Nossa Senhora é ainda mais bonita pessoalmente.
-Ficou perfeita no oratório da sala."
+"A imagem de Nossa Senhora é ainda mais bonita pessoalmente. Ficou perfeita no oratório da sala."
 
 </blockquote>
 
 <cite>
-    — Cliente, Belo Horizonte
+— Cliente, Belo Horizonte
 </cite>
 
 </div>
@@ -2190,13 +2193,12 @@ Ficou perfeita no oratório da sala."
 
 <blockquote>
 
-"Comprei a medalha de São Bento pro meu pai
-e ele não tira do pescoço desde então."
+"Comprei a medalha de São Bento pro meu pai e ele não tira do pescoço desde então."
 
 </blockquote>
 
 <cite>
-    — Cliente, Curitiba
+— Cliente, Curitiba
 </cite>
 
 </div>
@@ -2214,52 +2216,43 @@ e ele não tira do pescoço desde então."
      ===================================================== -->
 
 <section
-    id="contato"
-    class="contact"
+id="contato"
+class="contact"
 >
 
 <div class="wrap">
 
-
 <p class="eyebrow">
-    Fique por dentro
+Fique por dentro
 </p>
 
-
 <h2>
-    Receba novidades do ateliê
+Receba novidades do ateliê
 </h2>
 
-
 <p
-    style="color:var(--ink-light);margin-top:10px;"
+style="color:var(--ink-light);margin-top:10px;"
 >
-
-Lançamentos de peças, orações do mês e promoções,
-direto no seu e-mail.
-
+Lançamentos de peças, orações do mês e promoções, direto no seu e-mail.
 </p>
 
 
 <form
-    onsubmit="event.preventDefault(); this.querySelector('button').textContent='Inscrito! Obrigada.';"
+onsubmit="event.preventDefault(); this.querySelector('button').textContent='Inscrito! Obrigada.';"
 >
-
 
 <input
-    type="email"
-    placeholder="seu@email.com"
-    required
+type="email"
+placeholder="seu@email.com"
+required
 >
-
 
 <button
-    class="btn"
-    type="submit"
+class="btn"
+type="submit"
 >
-    Quero receber
+Quero receber
 </button>
-
 
 </form>
 
@@ -2268,27 +2261,27 @@ direto no seu e-mail.
 
 
 <a
-    href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20do%20Ave-Maria%20Ateli%C3%AA."
-    target="_blank"
-    rel="noopener"
+href="https://wa.me/5511994814967?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20do%20Ave-Maria%20Ateli%C3%AA."
+target="_blank"
+rel="noopener"
 >
-    WhatsApp
+WhatsApp
 </a>
 
 
 <a
-    href="https://instagram.com/avemariaatelie2"
-    target="_blank"
-    rel="noopener"
+href="https://instagram.com/avemariaatelie2"
+target="_blank"
+rel="noopener"
 >
-    Instagram
+Instagram
 </a>
 
 
 <a
-    href="mailto:andresamissao@gmail.com"
+href="mailto:andresamissao@gmail.com"
 >
-    E-mail
+E-mail
 </a>
 
 
